@@ -32,19 +32,19 @@ export function LiveTemperature() {
       const w = cv.clientWidth, h = cv.clientHeight
       const y = (v: number) => h - 8 - (v / 11) * (h - 16)
       cx.clearRect(0, 0, w, h)
-      cx.fillStyle = 'rgba(96,165,250,.06)'
+      cx.fillStyle = 'rgba(11,61,54,.06)'
       cx.fillRect(0, y(8), w, y(2) - y(8))
-      cx.setLineDash([4, 6]); cx.strokeStyle = 'rgba(255,255,255,.12)'
+      cx.setLineDash([4, 6]); cx.strokeStyle = 'rgba(11,61,54,.2)'
       for (const v of [2, 8]) { cx.beginPath(); cx.moveTo(0, y(v)); cx.lineTo(w, y(v)); cx.stroke() }
       cx.setLineDash([])
       const step = w / (N - 1)
       const g = cx.createLinearGradient(0, 0, 0, h)
-      g.addColorStop(0, 'rgba(225,29,72,.35)'); g.addColorStop(1, 'rgba(225,29,72,0)')
+      g.addColorStop(0, 'rgba(198,40,58,.22)'); g.addColorStop(1, 'rgba(198,40,58,0)')
       cx.beginPath(); cx.moveTo(0, h); pts.forEach((v, i) => cx.lineTo(i * step, y(v))); cx.lineTo(w, h); cx.fillStyle = g; cx.fill()
       cx.beginPath(); pts.forEach((v, i) => (i ? cx.lineTo(i * step, y(v)) : cx.moveTo(0, y(v))))
-      cx.strokeStyle = '#fb7185'; cx.lineWidth = 2; cx.shadowColor = '#e11d48'; cx.shadowBlur = 10; cx.stroke(); cx.shadowBlur = 0
+      cx.strokeStyle = '#C6283A'; cx.lineWidth = 2.2; cx.shadowColor = 'rgba(198,40,58,.4)'; cx.shadowBlur = 6; cx.stroke(); cx.shadowBlur = 0
       const last = pts[N - 1]
-      cx.beginPath(); cx.arc(w - 3, y(last), 4, 0, 7); cx.fillStyle = last > 8 ? '#e11d48' : '#fafafa'; cx.fill()
+      cx.beginPath(); cx.arc(w - 3, y(last), 4, 0, 7); cx.fillStyle = last > 8 ? '#C6283A' : '#0B3D36'; cx.fill()
       setNow(last)
       setOnline(!(idx % 160 > 40 && idx % 160 < 60))
     }
@@ -60,7 +60,7 @@ export function LiveTemperature() {
     <>
       <canvas id="tcan" ref={ref} aria-hidden="true" />
       <div className="t-row">
-        <span>الآن <b className="lat" style={{ color: now > 8 ? '#fb7185' : undefined }}>{now.toFixed(1)} °C</b></span>
+        <span>الآن <b className="lat" style={{ color: now > 8 ? '#C6283A' : undefined }}>{now.toFixed(1)} °C</b></span>
         <span>النطاق <b className="lat">2–8 °C</b></span>
         <span>الاتصال <b>{online ? 'متصل' : 'منقطع · تخزين محلي'}</b></span>
       </div>

@@ -3,7 +3,7 @@ import { usePrefersReducedMotion } from '../lib/motion'
 
 const VERT = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}'
 
-// "Blood silk": domain-warped fbm noise mapped from near-black to crimson with a soft sheen.
+// Brand ribbon: domain-warped fbm noise in NAJA green with a red ribbon sheen.
 const FRAG = `precision highp float;
 uniform vec2 r; uniform float t; uniform vec2 m;
 float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
@@ -17,11 +17,11 @@ void main(){
   float f=fbm(uv*1.2+2.4*w);
   float silk=smoothstep(.35,.95,f);
   float sheen=pow(smoothstep(.55,.9,f*(.6+.6*w.x)),3.);
-  vec3 col=mix(vec3(.035,.035,.045),vec3(.45,.03,.11),silk);
-  col=mix(col,vec3(.9,.13,.3),sheen*.8);
-  col+=vec3(1.,.6,.65)*pow(sheen,4.)*.25;
+  vec3 col=mix(vec3(.031,.17,.15),vec3(.08,.33,.29),silk);
+  col=mix(col,vec3(.78,.16,.23),sheen*.85);
+  col+=vec3(1.,.75,.75)*pow(sheen,4.)*.2;
   float v=smoothstep(1.25,.2,length(uv*vec2(.8,1.1)));
-  col*=.35+.65*v;
+  col*=.55+.45*v;
   gl_FragColor=vec4(col,1.);
 }`
 

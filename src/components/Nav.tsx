@@ -1,5 +1,5 @@
 import { DECK_URL } from '../data/content'
-import { Logo } from './Logo'
+import { Wordmark } from './Logo'
 
 const LINKS = [
   ['#features', 'المنصة'],
@@ -12,7 +12,7 @@ const LINKS = [
 export function Nav() {
   return (
     <nav className="nav" aria-label="التنقل">
-      <a className="brand" href="#top"><Logo size={22} /><span>HEMO-GUARD X</span></a>
+      <a className="brand" href="#top" aria-label="نَجا، الرئيسية"><Wordmark size={30} onDark /></a>
       <div className="links">
         {LINKS.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
       </div>

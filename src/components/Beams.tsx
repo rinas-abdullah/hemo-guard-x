@@ -1,5 +1,6 @@
 import { MODULES } from '../data/content'
 import { Spot } from './Spot'
+import { Wordmark } from './Logo'
 
 const PATHS = [
   { d: 'M830 80 C 700 80, 620 220, 490 220', dur: '3s', begin: '0s' },
@@ -16,7 +17,7 @@ const POS = [
 
 export function Beams() {
   return (
-    <section className="s" id="system" style={{ paddingTop: 40 }}>
+    <section className="s on-dark" id="system">
       <div className="wrap">
         <div className="head">
           <span className="tag">المنظومة</span>
@@ -27,7 +28,7 @@ export function Beams() {
           <svg className="paths" viewBox="0 0 980 440" preserveAspectRatio="none" aria-hidden="true">
             <defs>
               <linearGradient id="bg1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="0">
-                <stop offset="0" stopColor="#e11d48" stopOpacity="0" /><stop offset=".5" stopColor="#fb7185" /><stop offset="1" stopColor="#e11d48" stopOpacity="0" />
+                <stop offset="0" stopColor="#C6283A" stopOpacity="0" /><stop offset=".5" stopColor="#E25567" /><stop offset="1" stopColor="#C6283A" stopOpacity="0" />
               </linearGradient>
             </defs>
             <g fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="2">
@@ -47,7 +48,7 @@ export function Beams() {
             </div>
           ))}
           <div className="node hub" style={{ left: '50%', top: 220 }}>
-            <div className="box"><b>HEMO-GUARD X</b><h3>لوحة القيادة الموحدة</h3><p>رؤية واحدة للمخزون والوحدات النادرة والتنبيهات وسجل التدقيق.</p></div>
+            <div className="box"><Wordmark size={34} /><h3>لوحة القيادة الموحدة</h3><p>رؤية واحدة للمخزون والوحدات النادرة والتنبيهات وسجل التدقيق.</p></div>
           </div>
         </div>
       </div>

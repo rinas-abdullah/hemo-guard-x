@@ -12,8 +12,8 @@ export function ReadinessRing({ value = 72 }: { value?: number }) {
   return (
     <div className="ring">
       <svg ref={ref} viewBox="0 0 100 100" aria-hidden="true">
-        <defs><linearGradient id="rg"><stop offset="0" stopColor="#e11d48" /><stop offset="1" stopColor="#fb7185" /></linearGradient></defs>
-        <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="8" />
+        <defs><linearGradient id="rg"><stop offset="0" stopColor="#0B3D36" /><stop offset="1" stopColor="#C6283A" /></linearGradient></defs>
+        <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(11,61,54,.1)" strokeWidth="8" />
         <circle cx="50" cy="50" r="42" fill="none" stroke="url(#rg)" strokeWidth="8" strokeLinecap="round"
           strokeDasharray={CIRC} strokeDashoffset={shown ? CIRC * (1 - value / 100) : CIRC}
           transform="rotate(-90 50 50)" style={{ transition: 'stroke-dashoffset 1.4s ease' }} />

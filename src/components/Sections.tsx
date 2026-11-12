@@ -1,5 +1,6 @@
 import { ALIGNMENT, DECK_URL, EVIDENCE, REFERENCES, ROADMAP } from '../data/content'
 import { Spot } from './Spot'
+import { Wordmark } from './Logo'
 
 export function Evidence() {
   return (
@@ -67,6 +68,7 @@ export function FinalCTA() {
     <section className="s" style={{ paddingTop: 20 }}>
       <div className="wrap">
         <div className="final">
+          <svg className="ribbon" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true"><path d="M760 420 C 900 300, 1000 160, 1200 120 L1200 230 C 1040 260, 960 360, 900 420 Z" fill="#C6283A" opacity=".9"/><path d="M0 330 C 160 280, 300 320, 420 420 L0 420 Z" fill="#145A50"/></svg>
           <h2>لا يكفي أن نعرف أين الدم. نحتاج أن نصل إلى الوحدة المناسبة، وأن تصل سليمة.</h2>
           <div className="row">
             <a className="btn-big w" href={DECK_URL}>افتح العرض التقديمي</a>
@@ -82,8 +84,8 @@ export function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <span className="mono" style={{ color: 'var(--text)' }}>HEMO-GUARD X</span>
-        <span>نموذج أولي. البيانات التفاعلية اصطناعية للعرض.</span>
+        <Wordmark size={30} />
+        <span>جاهزية تسبق الحاجة · نموذج أولي، والبيانات التفاعلية اصطناعية للعرض.</span>
       </div>
     </footer>
   )
